@@ -94,3 +94,13 @@ def test_no_doctor_preference_and_other_insurance(client):
     assert res.status_code == 201, res.text
     assert res.json()["doctor"].startswith("Sem preferência")
     assert res.json()["insurance"] == "Outro convênio (reembolso)"
+
+
+def test_openapi_schema(client):
+    """Garante que o Swagger (/docs) consegue gerar o schema."""
+    res = client.get("/openapi.json")
+    assert res.status_code == 200
+    paths = res.json()["paths"]
+    assert "/api/assistant/chat" in paths
+    params = paths["/api/assistant/chat"]["post"].get("parameters", [])
+    assert not any(p["name"] == "request" for p in params)

@@ -1,5 +1,4 @@
 """Utilidades de segurança: limite de requisições por IP e token administrativo."""
-from __future__ import annotations
 
 import secrets
 import time
