@@ -31,6 +31,10 @@
         signal: controller.signal,
       });
       const data = await res.json().catch(() => null);
+      // Hospedagem estática (ex.: GitHub Pages) responde 404/405 em HTML para /api → trata como "sem servidor"
+      if ((res.status === 404 || res.status === 405) && !data) {
+        throw new ApiError("Servidor indisponível.", 0, null);
+      }
       if (!res.ok) {
         const detail = data?.detail;
         const message = typeof detail === "string" ? detail : "Não foi possível concluir a solicitação.";

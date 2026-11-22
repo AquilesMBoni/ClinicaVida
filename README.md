@@ -1,8 +1,14 @@
 # Clínica Vida — Site + API FastAPI + Assistente Virtual (v2)
 
+**[🔗 Ver demo online](https://github.com/AquilesMBoni/ClinicaVida)** · [Como executar](#como-executar) · [Endpoints](#endpoints)
+
+> A demo online (GitHub Pages) roda em **modo offline**: o site e a assistente usam dados locais e o pré-agendamento não é gravado. Para a experiência completa (API, banco SQLite e Swagger), execute o projeto localmente.
+
+![Página inicial com efeito de escrita e carrossel](docs/img/demo.gif)
+
 Landing page institucional de uma clínica multidisciplinar fictícia, agora com **backend em FastAPI**, **banco SQLite** e uma **assistente virtual ("Vida")**. Mantém o foco em acolhimento, acessibilidade (WCAG 2.2), LGPD e Resolução CFM nº 2.336/2023.
 
-## Novidades da v3
+## Novidades da v2
 
 **Front-end**
 - **Hero com efeito de escrita** em duas frases ("Cuidado integral." / "Em *cada fase* da sua vida."), sem salto de layout e legível por leitores de tela.
@@ -26,12 +32,41 @@ Landing page institucional de uma clínica multidisciplinar fictícia, agora com
 - **LLM opcional** (Ollama, LM Studio ou qualquer API compatível com OpenAI) usado só quando regras e FAQ não acham resposta.
 - Conversas **não são armazenadas** (LGPD). Sem servidor, o site entra em modo offline com respostas básicas.
 
+## Telas
+
+| Especialidades (tabela expansível) | Perfil do profissional (modal com desfoque) |
+|---|---|
+| ![Tabela de especialidades](docs/img/especialidades.png) | ![Modal do profissional](docs/img/modal-medico.png) |
+
+| Assistente virtual | Convênios (carrossel infinito) |
+|---|---|
+| ![Assistente virtual](docs/img/assistente.png) | ![Convênios](docs/img/convenios.png) |
+
+| Versão celular | Documentação da API (Swagger) |
+|---|---|
+| ![Versão celular](docs/img/mobile.png) | ![Swagger](docs/img/swagger.png) |
+
 ## Como executar
 
+**Windows (PowerShell)**
+
+```powershell
+cd backend
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+> Se o PowerShell bloquear o `Activate.ps1`, rode uma vez: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`.
+> Sem ambiente virtual, use `py -m uvicorn app.main:app --reload`.
+
+**Linux / macOS**
+
 ```bash
-cd ClinicaVida/backend
-python -m venv .venv
-# Windows: .venv\Scripts\activate   |   Linux/macOS: source .venv/bin/activate
+cd backend
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
@@ -39,7 +74,7 @@ uvicorn app.main:app --reload
 - Site: <http://127.0.0.1:8000>
 - Documentação interativa da API: <http://127.0.0.1:8000/docs>
 
-O banco `backend/clinicavida.db` é criado e populado automaticamente. Para recriá-lo: `python -m app.seed --reset`.
+O banco `backend/clinicavida.db` é criado e populado automaticamente. Para recriá-lo: `py -m app.seed --reset` (Linux/macOS: `python3 -m app.seed --reset`).
 
 Também funciona abrindo `frontend/index.html` com o **Live Server** (porta 5500): o site chama a API em `http://127.0.0.1:8000`. Se a API estiver desligada, usa `js/fallback-data.js` (modo offline).
 
@@ -57,6 +92,12 @@ LLM_MODEL=llama3.2
 ```bash
 cd backend
 pytest
+```
+
+### Publicar a demo (GitHub Pages)
+
+```powershell
+git subtree push --prefix frontend origin gh-pages
 ```
 
 ## Endpoints
