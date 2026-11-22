@@ -1,0 +1,761 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Clínica Vida — Atendimento médico multidisciplinar humanizado, com especialidades, corpo clínico qualificado e pré-agendamento online.">
+  <meta name="theme-color" content="#F7F6F3">
+  <!-- Endereço da API FastAPI. Vazio = detecta automaticamente (mesma origem ou http://127.0.0.1:8000). -->
+  <meta name="api-base" content="">
+  <script>
+    // Ativa os estilos de JS/animação antes da primeira pintura (evita "piscar" o conteúdo)
+    document.documentElement.classList.add("js");
+    if (matchMedia("(prefers-reduced-motion: no-preference)").matches && "IntersectionObserver" in window) {
+      document.documentElement.classList.add("motion", "hero-ready");
+    }
+  </script>
+  <title>Clínica Vida | Saúde &amp; Cuidado Multidisciplinar</title>
+
+  <!-- Favicon SVG inline -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314507A'/%3E%3Cpath d='M32 16v32M16 32h32' stroke='%23F6F7F4' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='46' cy='18' r='5' fill='%23E1F3FE'/%3E%3C/svg%3E">
+
+  <!-- Bootstrap 5.3.3 — CSS oficial via jsDelivr com SRI válido -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  >
+
+  <!-- Google Fonts: Newsreader + Geist + Geist Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+
+  <!-- CSS Customizado -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top site-navbar" aria-label="Navegação principal">
+    <div class="container">
+      <a class="navbar-brand brand" href="#inicio" aria-label="Clínica Vida — Página inicial">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <path d="M12 5v14M5 12h14"/>
+          </svg>
+        </span>
+        <span class="brand-text">Clínica <strong>Vida</strong></span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu de navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#sobre">A Clínica</a></li>
+          <li class="nav-item"><a class="nav-link" href="#especialidades">Especialidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#equipe">Corpo Clínico</a></li>
+          <li class="nav-item"><a class="nav-link" href="#convenios">Convênios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">Dúvidas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-primary-clinic btn-nav" href="#agendamento">Agendar consulta</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="conteudo-principal">
+    <!-- Hero -->
+    <section class="hero-section" id="inicio">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <span class="eyebrow-pill hero-intro" style="--index:0">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              Atendimento humanizado e multidisciplinar
+            </span>
+            <!-- Efeito de escrita: o texto "fantasma" reserva o espaço (sem salto de layout) e é lido sem JS -->
+            <h1 class="hero-title" aria-label="Cuidado integral. Em cada fase da sua vida.">
+              <span class="tw-line" aria-hidden="true"><span class="tw-ghost">Cuidado integral.</span><span class="tw-typed"></span></span>
+              <span class="tw-line" aria-hidden="true"><span class="tw-ghost">Em <em>cada fase</em> da sua vida.</span><span class="tw-typed"></span></span>
+            </h1>
+            <p class="hero-subtitle hero-intro" style="--index:3">
+              Reunimos diferentes especialidades médicas e de saúde em um ambiente acolhedor, com escuta atenta, diagnósticos claros e agendamento descomplicado.
+            </p>
+            <div class="d-flex flex-wrap gap-3 mt-4 hero-intro" style="--index:4">
+              <a href="#agendamento" class="btn btn-primary-clinic btn-lg">Agendar consulta</a>
+              <a href="#especialidades" class="btn btn-outline-clinic btn-lg">Conhecer especialidades</a>
+            </div>
+
+            <div class="hero-highlights row g-3 mt-4 pt-3 hero-intro" style="--index:5">
+              <div class="col-4">
+                <div class="highlight-item">
+                  <strong>6+</strong>
+                  <span>Especialidades integradas</span>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="highlight-item">
+                  <strong>Presencial</strong>
+                  <span>e Teleconsulta</span>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="highlight-item">
+                  <strong>Seg – Sáb</strong>
+                  <span>Horários flexíveis</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="hero-visual hero-intro">
+              <!-- Carrossel automático (pausa no hover/foco, botão de pausa — WCAG 2.2.2) -->
+              <div class="hero-image-frame hero-carousel" id="heroCarousel" role="region" aria-roledescription="carrossel" aria-label="Ambientes e atendimento da Clínica Vida" tabindex="0">
+                <div class="hc-track">
+                  <figure class="hc-slide is-active" role="group" aria-roledescription="slide" aria-label="1 de 4"
+                          data-title="Jornada sem pressa" data-text="Consultas planejadas para ouvir você com calma e clareza.">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1100&q=85"
+                         alt="Profissional de saúde em atendimento atencioso em consultório iluminado" class="hero-image">
+                  </figure>
+                  <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="2 de 4"
+                          data-title="Recepção acolhedora" data-text="Ambiente climatizado, luz natural e atenção desde a sua chegada.">
+                    <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=1100&q=85"
+                         alt="Recepção da clínica com iluminação natural e plantas" class="hero-image" loading="lazy">
+                  </figure>
+                  <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="3 de 4"
+                          data-title="Tecnologia a favor do cuidado" data-text="Teleconsulta, receitas digitais e confirmação rápida pelo WhatsApp.">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1100&q=85"
+                         alt="Profissional de saúde consultando informações em um tablet" class="hero-image" loading="lazy">
+                  </figure>
+                  <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="4 de 4"
+                          data-title="Prevenção em primeiro lugar" data-text="Check-ups e acompanhamento contínuo para cada fase da vida.">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1100&q=85"
+                         alt="Estetoscópio sobre a mesa do consultório" class="hero-image" loading="lazy">
+                  </figure>
+                </div>
+
+                <div class="hc-controls">
+                  <div class="hc-dots" role="group" aria-label="Escolher slide"></div>
+                  <button type="button" class="hc-toggle" aria-label="Pausar carrossel" aria-pressed="false">
+                    <svg class="icon-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+                    <svg class="icon-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>
+                  </button>
+                </div>
+                <div class="hc-progress" aria-hidden="true"><span></span></div>
+              </div>
+
+              <div class="hero-floating-card">
+                <div class="hc-caption">
+                  <strong id="heroCaptionTitle">Jornada sem pressa</strong>
+                  <p id="heroCaptionText">Consultas planejadas para ouvir você com calma e clareza.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre a Clínica -->
+    <section class="section-space section-alt" id="sobre">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <div class="about-collage">
+              <img
+                src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=900&q=85"
+                alt="Recepção acolhedora com iluminação natural e plantas"
+                class="about-img-main"
+                loading="lazy"
+              >
+              <div class="about-badge">
+                <span class="badge-label">Nosso compromisso</span>
+                <p>Saúde preventiva, orientação acessível e acompanhamento contínuo.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <p class="section-eyebrow">SOBRE A CLÍNICA VIDA</p>
+            <h2 class="section-title">Um espaço pensado para acolher antes mesmo da consulta.</h2>
+            <p class="section-lead">
+              A Clínica Vida nasceu com o propósito de tornar o cuidado com a saúde mais próximo, claro e humano. Acreditamos que um bom atendimento começa na recepção tranquila e continua no diálogo transparente entre profissional e paciente.
+            </p>
+            <p class="section-copy">
+              Nossa equipe atua de forma integrada para acompanhar desde check-ups preventivos até cuidados contínuos, respeitando o tempo e a individualidade de cada pessoa.
+            </p>
+
+            <div class="row g-3 mt-3">
+              <div class="col-md-4">
+                <div class="pillar-card">
+                  <h3>Escuta ativa</h3>
+                  <p>Consultas conduzidas com atenção e linguagem fácil de entender.</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="pillar-card">
+                  <h3>Visão integrada</h3>
+                  <p>Especialidades que dialogam entre si para um cuidado completo.</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="pillar-card">
+                  <h3>Agilidade</h3>
+                  <p>Pré-agendamento online e confirmação rápida pela nossa equipe.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Especialidades -->
+    <section class="section-space" id="especialidades">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="section-eyebrow">ÁREAS DE ATENDIMENTO</p>
+          <h2 class="section-title">Especialidades para cuidar de você por inteiro</h2>
+          <p class="section-copy mx-auto">
+            Toque em uma especialidade para ver a modalidade de atendimento, a descrição e os profissionais — e agendar em um clique.
+          </p>
+        </div>
+
+        <div class="spec-toolbar">
+          <div class="segmented" role="group" aria-label="Filtrar especialidades por modalidade">
+            <button type="button" class="segmented-btn active" aria-pressed="true" data-modality="todas">Todas</button>
+            <button type="button" class="segmented-btn" aria-pressed="false" data-modality="Presencial">Presencial</button>
+            <button type="button" class="segmented-btn" aria-pressed="false" data-modality="Teleconsulta">Online</button>
+          </div>
+          <p class="spec-count mb-0" id="specCount" role="status">6 especialidades</p>
+        </div>
+
+        <!-- Tabela dinâmica: cada linha expande para mostrar modalidade, descrição e ações -->
+        <div class="spec-table" id="specialtyTable">
+          <div class="spec-head" aria-hidden="true">
+            <span>Nº</span><span>Especialidade</span><span>Modalidade</span><span>Equipe</span><span></span>
+          </div>
+          <div class="spec-body" id="specialtyRows" role="list" aria-label="Especialidades">
+            <p class="spec-loading">Carregando especialidades…</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Corpo Clínico -->
+    <section class="section-space section-alt" id="equipe">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="section-eyebrow">CORPO CLÍNICO</p>
+          <h2 class="section-title">Profissionais dedicados ao seu bem-estar</h2>
+          <p class="section-copy mx-auto">
+            Filtre por área de atuação e toque na foto para conhecer a formação, a agenda e as áreas de cada profissional.
+          </p>
+        </div>
+
+        <!-- Filtros por especialidade -->
+        <div class="filter-bar" id="teamFilters" role="group" aria-label="Filtrar profissionais por especialidade">
+          <button type="button" aria-pressed="true" class="filter-pill active" data-specialty-filter="todas">Todas as áreas</button>
+        </div>
+
+        <div class="row g-4 mt-2" id="doctorsGrid">
+          <!-- Cards gerados a partir da API (/api/doctors) ou dos dados locais -->
+        </div>
+        <p id="doctorsEmpty" class="text-center text-muted mt-3 d-none" role="status">Nenhum profissional nesta área no momento.</p>
+
+        <p class="compliance-note text-center mt-4">
+          Nota de portfólio: nomes, imagens e registros profissionais (CRM/RQE/CRP/CRN) são fictícios e ilustram a conformidade com a Resolução CFM nº 2.336/2023.
+        </p>
+      </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section class="section-space" id="como-funciona">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="section-eyebrow">JORNADA DO PACIENTE</p>
+          <h2 class="section-title">Como funciona o atendimento</h2>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-md-4">
+            <div class="step-card h-100">
+              <span class="step-badge">Passo 1</span>
+              <h3>Escolha a especialidade</h3>
+              <p>Navegue pelas áreas médicas, conheça a formação dos profissionais e escolha quem melhor atende sua necessidade.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="step-card h-100">
+              <span class="step-badge">Passo 2</span>
+              <h3>Envie sua preferência</h3>
+              <p>Preencha o pré-agendamento com sua data, turno e convênio, sem precisar informar dados clínicos sensíveis.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="step-card h-100">
+              <span class="step-badge">Passo 3</span>
+              <h3>Confirmação humanizada</h3>
+              <p>Nossa recepção entra em contato para confirmar o melhor horário disponível e enviar as orientações da consulta.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Convênios -->
+    <section class="section-space section-alt" id="convenios">
+      <div class="container">
+        <div class="row align-items-end g-4 mb-4">
+          <div class="col-lg-7">
+            <p class="section-eyebrow">CONVÊNIOS E PARTICULAR</p>
+            <h2 class="section-title mb-2">Planos atendidos na Clínica Vida</h2>
+            <p class="section-copy mb-0">
+              Trabalhamos com os principais convênios médicos e também oferecemos atendimento particular com emissão de nota fiscal para reembolso.
+            </p>
+          </div>
+          <div class="col-lg-5">
+            <label for="insuranceSearch" class="form-label insurance-label">Seu plano é atendido?</label>
+            <div class="insurance-search-wrap">
+              <svg class="insurance-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <input type="search" id="insuranceSearch" class="form-control insurance-search" placeholder="Digite o nome (ex.: Unimed, Amil, Particular)" autocomplete="off" aria-describedby="insuranceResult">
+            </div>
+          </div>
+        </div>
+
+        <!-- Resultado da busca (anunciado para leitores de tela) -->
+        <div id="insuranceResult" class="insurance-result" role="status" aria-live="polite"></div>
+      </div>
+
+      <!-- Infinite Logo Carousel (logotipos tipográficos ilustrativos, sem marcas reais) -->
+      <div class="logo-marquee" id="insuranceMarquee" aria-label="Convênios atendidos">
+        <ul class="logo-track" id="insuranceTrack"></ul>
+      </div>
+
+      <div class="container">
+        <p class="compliance-note text-center mt-4">
+          A cobertura pode variar conforme a categoria do seu plano e especialidade. Confirme a elegibilidade com nossa recepção antes da consulta.
+        </p>
+      </div>
+    </section>
+
+    <!-- Depoimentos (Demonstrativos) -->
+    <section class="section-space" id="depoimentos">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="section-eyebrow">EXPERIÊNCIA DO PACIENTE</p>
+          <h2 class="section-title">O que valorizam em nosso atendimento</h2>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-md-4">
+            <article class="quote-card h-100">
+              <p class="quote-mark" aria-hidden="true">“</p>
+              <blockquote>Ambiente muito tranquilo, recepção organizada e consulta sem pressa. Saí com todas as minhas dúvidas esclarecidas.</blockquote>
+              <div class="quote-author">
+                <span class="author-initials">AC</span>
+                <div>
+                  <strong>Ana Clara S.</strong>
+                  <small>Atendimento em Clínica Geral</small>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="quote-card h-100">
+              <p class="quote-mark" aria-hidden="true">“</p>
+              <blockquote>Consegui agendar pediatria e nutrição na mesma semana com muita facilidade. Equipe atenciosa do início ao fim.</blockquote>
+              <div class="quote-author">
+                <span class="author-initials">RM</span>
+                <div>
+                  <strong>Rodrigo M.</strong>
+                  <small>Atendimento Familiar</small>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="quote-card h-100">
+              <p class="quote-mark" aria-hidden="true">“</p>
+              <blockquote>A opção de teleconsulta para retorno facilitou muito minha rotina, mantendo o mesmo cuidado e atenção.</blockquote>
+              <div class="quote-author">
+                <span class="author-initials">LP</span>
+                <div>
+                  <strong>Larissa P.</strong>
+                  <small>Teleconsulta</small>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <p class="compliance-note text-center mt-4">
+          Depoimentos fictícios criados exclusivamente para demonstração visual deste projeto de portfólio.
+        </p>
+      </div>
+    </section>
+
+    <!-- Pré-agendamento Inteligente -->
+    <section class="section-space section-alt" id="agendamento">
+      <div class="container">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-5">
+            <p class="section-eyebrow">PRÉ-AGENDAMENTO ONLINE</p>
+            <h2 class="section-title">Solicite seu horário em poucos passos</h2>
+            <p class="section-copy">
+              Escolha a especialidade, o profissional e a melhor data. Nossa equipe confirmará a disponibilidade pelo WhatsApp ou telefone informado.
+            </p>
+
+            <div class="lgpd-box mt-4">
+              <strong>Privacidade e LGPD em primeiro lugar</strong>
+              <p class="mb-0">
+                Para proteger seus dados pessoais sensíveis, este formulário solicita apenas informações administrativas para contato — <strong>não informe sintomas, exames ou histórico médico</strong> aqui.
+              </p>
+            </div>
+
+            <div class="contact-quick mt-4">
+              <p class="mb-1"><strong>Prefere falar diretamente com a recepção?</strong></p>
+              <p class="text-muted small mb-0">Atendimento telefônico de segunda a sexta, das 07h30 às 19h30, e sábados das 08h às 13h.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <form class="booking-card" id="clinicBookingForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="patientName" class="form-label">Nome completo *</label>
+                  <input type="text" class="form-control" id="patientName" autocomplete="name" placeholder="Digite seu nome completo" minlength="3" required>
+                  <div class="invalid-feedback">Informe seu nome completo (mínimo 3 caracteres).</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="patientPhone" class="form-label">WhatsApp / Telefone *</label>
+                  <input type="tel" class="form-control" id="patientPhone" autocomplete="tel-national" placeholder="(19) 99999-9999" inputmode="numeric" maxlength="15" pattern="\(\d{2}\) \d{4,5}-\d{4}" required>
+                  <div class="invalid-feedback">Informe um telefone válido com DDD.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="specialtySelect" class="form-label">Especialidade *</label>
+                  <select class="form-select" id="specialtySelect" required>
+                    <option value="" selected disabled>Selecione a especialidade</option>
+                  </select>
+                  <div class="invalid-feedback">Selecione uma especialidade.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="doctorSelect" class="form-label">Profissional</label>
+                  <select class="form-select" id="doctorSelect">
+                    <option value="">Sem preferência (primeiro horário)</option>
+                  </select>
+                  <div class="invalid-feedback" data-error-for="doctor"></div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="modalitySelect" class="form-label">Modalidade *</label>
+                  <select class="form-select" id="modalitySelect" required>
+                    <option value="Presencial">Presencial na clínica</option>
+                    <option value="Teleconsulta">Teleconsulta (online)</option>
+                  </select>
+                  <div class="form-text" id="modalityHint">Escolha uma especialidade para ver as modalidades.</div>
+                  <div class="invalid-feedback" data-error-for="modality"></div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="insuranceSelect" class="form-label">Convênio ou Particular *</label>
+                  <select class="form-select" id="insuranceSelect" required>
+                    <option value="particular">Atendimento Particular</option>
+                  </select>
+                  <div class="invalid-feedback" data-error-for="insurance"></div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="preferredDate" class="form-label">Data preferencial *</label>
+                  <input type="date" class="form-control" id="preferredDate" required>
+                  <div class="form-text" id="dateHint">Segunda a sábado. Fechado aos domingos.</div>
+                  <div class="invalid-feedback" id="dateInvalidMsg">Escolha uma data válida de segunda a sábado.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="preferredPeriod" class="form-label">Período preferido *</label>
+                  <select class="form-select" id="preferredPeriod" required>
+                    <option value="" selected disabled>Selecione o período</option>
+                    <option value="manha">Manhã (08h às 12h)</option>
+                    <option value="tarde">Tarde (13h às 19h)</option>
+                  </select>
+                  <div class="invalid-feedback">Selecione um período preferido.</div>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="privacyConsent" required>
+                    <label class="form-check-label small" for="privacyConsent">
+                      Concordo em compartilhar meus dados de contato exclusivamente para retorno sobre esta solicitação de agendamento demonstrativa.
+                    </label>
+                    <div class="invalid-feedback">Você precisa concordar para continuar.</div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-alert d-none" id="bookingAlert" role="alert"></div>
+                </div>
+
+                <div class="col-12 pt-2">
+                  <button type="submit" class="btn btn-primary-clinic btn-lg w-100" id="bookingSubmit">
+                    <span class="btn-label">Enviar solicitação de agendamento</span>
+                    <span class="btn-spinner" aria-hidden="true"></span>
+                  </button>
+                  <p class="small text-muted text-center mt-2 mb-0" id="bookingFootnote">
+                    Seus dados de contato são usados apenas para o retorno sobre esta solicitação.
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-space" id="faq">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-header text-center">
+              <p class="section-eyebrow">PERGUNTAS FREQUENTES</p>
+              <h2 class="section-title">Dúvidas comuns antes da consulta</h2>
+            </div>
+
+            <div class="accordion clinic-accordion mt-4" id="clinicFaqAccordion">
+              <!-- Perguntas geradas a partir da API (/api/faqs) ou dos dados locais -->
+            </div>
+
+            <!-- Atalho para o assistente virtual -->
+            <aside class="assistant-shortcut mt-5" aria-labelledby="assistantShortcutTitle">
+              <div class="assistant-shortcut-avatar" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M8 21h8M7 7h10a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-5a3 3 0 0 1 3-3z"/><circle cx="9.5" cy="12.5" r="1" fill="currentColor"/><circle cx="14.5" cy="12.5" r="1" fill="currentColor"/></svg>
+              </div>
+              <div class="assistant-shortcut-body">
+                <h3 id="assistantShortcutTitle">Não encontrou sua dúvida?</h3>
+                <p>A <strong>Vida</strong>, nossa assistente virtual, responde na hora sobre convênios, horários, especialidades e ajuda no seu pré-agendamento.</p>
+                <div class="assistant-shortcut-chips">
+                  <button type="button" class="chip" data-assistant-ask="Vocês aceitam meu convênio?">Aceitam meu convênio?</button>
+                  <button type="button" class="chip" data-assistant-ask="Qual especialidade atende online?">Quem atende online?</button>
+                  <button type="button" class="chip" data-assistant-ask="Posso remarcar minha consulta?">Posso remarcar?</button>
+                </div>
+              </div>
+              <button type="button" class="btn btn-primary-clinic assistant-shortcut-cta" data-assistant-open>
+                Conversar com a assistente
+              </button>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato e Localização -->
+    <section class="section-space section-alt" id="contato">
+      <div class="container">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-5">
+            <p class="section-eyebrow">CONTATO E LOCALIZAÇÃO</p>
+            <h2 class="section-title">Estamos prontos para receber você</h2>
+            <p class="section-copy">
+              Fácil acesso, estacionamento conveniado no local e estrutura acessível para pessoas com mobilidade reduzida.
+            </p>
+
+            <div class="contact-list mt-4">
+              <div class="contact-row">
+                <span class="contact-badge" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+                <div>
+                  <strong>Endereço</strong>
+                  <p>Av. das Acácias, 840 — Cambuí<br>Campinas/SP — CEP 13025-000</p>
+                </div>
+              </div>
+              <div class="contact-row">
+                <span class="contact-badge" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+                <div>
+                  <strong>Horário de funcionamento</strong>
+                  <p>Segunda a sexta: 07h30 às 19h30<br>Sábado: 08h00 às 13h00</p>
+                </div>
+              </div>
+              <div class="contact-row">
+                <span class="contact-badge" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
+                <div>
+                  <strong>Telefone e E-mail</strong>
+                  <p>(19) 3000-5678 • contato@clinicavida.example</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="location-card h-100">
+              <div class="location-visual">
+                <div class="map-pin-card">
+                  <span class="pin-circle" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+                  <h3>Clínica Vida — Unidade Cambuí</h3>
+                  <p>Av. das Acácias, 840 • Campinas/SP</p>
+                  <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+                    <a href="https://maps.google.com/?q=Campinas+SP" target="_blank" rel="noopener noreferrer" class="btn btn-outline-clinic btn-sm">
+                      Abrir rota no mapa ↗
+                    </a>
+                    <a href="https://wa.me/5519000000000" target="_blank" rel="noopener noreferrer" class="btn btn-primary-clinic btn-sm">
+                      Falar no WhatsApp (Demo)
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="location-footer">
+                <span>Acessibilidade completa</span>
+                <span>Estacionamento no local</span>
+                <span>Ambiente climatizado</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4 pb-4 border-bottom border-secondary-subtle">
+        <div class="col-lg-5">
+          <a class="brand" href="#inicio">
+            <span class="brand-mark brand-mark-light" aria-hidden="true">+</span>
+            <span class="brand-text">Clínica <strong>Vida</strong></span>
+          </a>
+          <p class="footer-desc mt-3">
+            Cuidado multidisciplinar com acolhimento, clareza e compromisso ético.
+          </p>
+          <p class="footer-legal mb-0">
+            Responsável Técnico-Médico (Fictício): Dr. Henrique Vasconcelos — CRM-SP 000.001.
+          </p>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h4 class="footer-heading">Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="#sobre">Sobre a clínica</a></li>
+            <li><a href="#especialidades">Especialidades</a></li>
+            <li><a href="#equipe">Corpo clínico</a></li>
+            <li><a href="#convenios">Convênios</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-4">
+          <h4 class="footer-heading">Atendimento</h4>
+          <ul class="footer-links">
+            <li><a href="#agendamento">Pré-agendamento online</a></li>
+            <li><a href="#faq">Perguntas frequentes</a></li>
+            <li><a href="#contato">Localização e horários</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 pt-3 footer-bottom">
+        <p class="mb-0">© <span id="currentYear"></span> Clínica Vida. Projeto demonstrativo de portfólio (dados fictícios).</p>
+        <a href="#inicio" class="back-top-link">Voltar ao topo ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Barra fixa inferior no mobile: agendar, assistente e WhatsApp sempre à mão -->
+  <div class="mobile-bottom-bar d-lg-none" role="region" aria-label="Ações rápidas">
+    <a href="#agendamento" class="btn btn-primary-clinic flex-grow-1">Agendar consulta</a>
+    <button type="button" class="btn btn-outline-clinic btn-icon" data-assistant-open="toggle" aria-expanded="false" aria-label="Abrir assistente virtual" aria-controls="assistantPanel"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M8 21h8M7 7h10a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-5a3 3 0 0 1 3-3z"/><circle cx="9.5" cy="12.5" r="1" fill="currentColor"/><circle cx="14.5" cy="12.5" r="1" fill="currentColor"/></svg></button>
+    <a href="https://wa.me/5519000000000" target="_blank" rel="noopener noreferrer" class="btn btn-outline-clinic btn-icon" aria-label="Falar pelo WhatsApp (abre em nova aba)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></a>
+  </div>
+
+  <!-- Botões flutuantes no desktop: assistente virtual + Fale conosco -->
+  <div class="float-stack d-none d-lg-flex">
+    <button type="button" class="assistant-fab" data-assistant-open="toggle" aria-controls="assistantPanel" aria-expanded="false">
+      <span class="assistant-fab-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M8 21h8M7 7h10a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-5a3 3 0 0 1 3-3z"/><circle cx="9.5" cy="12.5" r="1" fill="currentColor"/><circle cx="14.5" cy="12.5" r="1" fill="currentColor"/></svg></span>
+      <span class="assistant-fab-label">Assistente virtual</span>
+      <span class="assistant-fab-dot" aria-hidden="true"></span>
+    </button>
+    <a class="whatsapp-float" href="https://wa.me/5519000000000" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp (número demonstrativo)">
+      <span aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span>
+      <span class="whatsapp-label">Dúvidas? Fale conosco</span>
+    </a>
+  </div>
+
+  <!-- Assistente virtual (janela não modal: a página continua navegável) -->
+  <section class="assistant-panel" id="assistantPanel" role="dialog" aria-modal="false" aria-labelledby="assistantTitle" hidden>
+    <header class="assistant-header">
+      <span class="assistant-avatar" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M8 21h8M7 7h10a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-5a3 3 0 0 1 3-3z"/><circle cx="9.5" cy="12.5" r="1" fill="currentColor"/><circle cx="14.5" cy="12.5" r="1" fill="currentColor"/></svg></span>
+      <div class="assistant-heading">
+        <h2 id="assistantTitle">Vida <span>· assistente virtual</span></h2>
+        <p class="assistant-status" id="assistantStatus"><span class="status-dot"></span><span class="status-text">Conectando…</span></p>
+      </div>
+      <button type="button" class="assistant-icon-btn" id="assistantReset" aria-label="Reiniciar conversa" title="Reiniciar conversa">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+      <button type="button" class="assistant-icon-btn" id="assistantClose" aria-label="Fechar assistente">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </header>
+    <p class="assistant-notice">
+      <strong>Privacidade:</strong> não compartilhe sintomas ou dados de saúde. Em emergência, ligue <a href="tel:192">192</a>.
+    </p>
+    <div class="assistant-log" id="assistantLog" role="log" aria-live="polite" aria-relevant="additions"></div>
+    <div class="assistant-suggestions" id="assistantSuggestions" aria-label="Sugestões de perguntas"></div>
+    <form class="assistant-form" id="assistantForm" autocomplete="off">
+      <label for="assistantInput" class="visually-hidden">Digite sua pergunta</label>
+      <input id="assistantInput" type="text" maxlength="600" placeholder="Pergunte sobre convênios, horários…" enterkeyhint="send">
+      <button type="submit" class="assistant-send" aria-label="Enviar mensagem">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </form>
+  </section>
+
+  <!-- Modal de perfil do profissional (abre sobre a página com fundo desfocado) -->
+  <div class="modal fade doctor-modal" id="doctorModal" tabindex="-1" aria-labelledby="doctorModalName" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content clinic-modal">
+        <button type="button" class="btn-close doctor-modal-close" data-bs-dismiss="modal" aria-label="Fechar perfil"></button>
+        <div class="modal-body p-0" id="doctorModalBody"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Resumo da Solicitação -->
+  <div class="modal fade" id="bookingSummaryModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content clinic-modal">
+        <div class="modal-header">
+          <div>
+            <span class="modal-eyebrow" id="bookingModalEyebrow">SOLICITAÇÃO REGISTRADA</span>
+            <h3 class="modal-title fs-5" id="bookingModalLabel">Resumo do seu pré-agendamento</h3>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body" id="bookingSummaryBody"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-clinic" data-bs-dismiss="modal">Fechar</button>
+          <a id="whatsappConfirmLink" href="https://wa.me/5519000000000" target="_blank" rel="noopener noreferrer" class="btn btn-primary-clinic">
+            Enviar resumo no WhatsApp ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5.3.3 JS Bundle com SRI válido -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+  <script src="js/fallback-data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/assistant.js"></script>
+</body>
+</html>

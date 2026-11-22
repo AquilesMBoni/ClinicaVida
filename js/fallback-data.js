@@ -1,0 +1,589 @@
+/* Gerado por backend/app/export_fallback.py — não edite à mão.
+   Usado quando a API FastAPI não está disponível (ex.: abrir o index.html direto). */
+window.CLINIC_FALLBACK = {
+  "clinic": {
+    "name": "Clínica Vida",
+    "address": "Av. das Acácias, 840 — Cambuí, Campinas/SP — CEP 13025-000",
+    "phone": "(19) 3000-5678",
+    "whatsapp": "5519000000000",
+    "email": "contato@clinicavida.example",
+    "hours": {
+      "weekdays": "Segunda a sexta: 07h30 às 19h30",
+      "saturday": "Sábado: 08h00 às 13h00 (apenas manhã)",
+      "sunday": "Domingo: fechado"
+    },
+    "amenities": [
+      "Acessibilidade completa",
+      "Estacionamento conveniado no local",
+      "Ambiente climatizado"
+    ]
+  },
+  "specialties": [
+    {
+      "slug": "clinica-geral",
+      "name": "Clínica Geral",
+      "short_name": "Clínica Geral",
+      "summary": "Check-ups, exames de rotina e acompanhamento contínuo.",
+      "description": "Avaliação global da saúde, check-ups preventivos, solicitação de exames de rotina e acompanhamento contínuo.",
+      "modalities": [
+        "Presencial",
+        "Teleconsulta"
+      ],
+      "keywords": [
+        "clinico",
+        "clinica geral",
+        "check-up",
+        "checkup",
+        "rotina",
+        "geral",
+        "clinico geral",
+        "medico de familia"
+      ],
+      "doctors": [
+        {
+          "slug": "henrique-vasconcelos",
+          "name": "Dr. Henrique Vasconcelos",
+          "first_name": "Dr. Henrique",
+          "modalities": [
+            "Presencial",
+            "Teleconsulta"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "cardiologia",
+      "name": "Cardiologia",
+      "short_name": "Cardiologia",
+      "summary": "Prevenção e acompanhamento da saúde do coração.",
+      "description": "Prevenção, diagnóstico e acompanhamento cardiovascular, avaliação pré-operatória e orientação para hábitos saudáveis.",
+      "modalities": [
+        "Presencial"
+      ],
+      "keywords": [
+        "cardio",
+        "cardiologia",
+        "cardiologista",
+        "coracao",
+        "pressao",
+        "risco cirurgico",
+        "pre-operatorio"
+      ],
+      "doctors": [
+        {
+          "slug": "mariana-albuquerque",
+          "name": "Dra. Mariana Albuquerque",
+          "first_name": "Dra. Mariana",
+          "modalities": [
+            "Presencial"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "pediatria",
+      "name": "Pediatria",
+      "short_name": "Pediatria",
+      "summary": "Crescimento e desenvolvimento infantil com orientação à família.",
+      "description": "Acompanhamento do crescimento e desenvolvimento infantil, puericultura, orientação familiar e cuidado preventivo.",
+      "modalities": [
+        "Presencial",
+        "Teleconsulta"
+      ],
+      "keywords": [
+        "pediatria",
+        "pediatra",
+        "crianca",
+        "filho",
+        "filha",
+        "bebe",
+        "infantil",
+        "puericultura"
+      ],
+      "doctors": [
+        {
+          "slug": "camila-nogueira",
+          "name": "Dra. Camila Nogueira",
+          "first_name": "Dra. Camila",
+          "modalities": [
+            "Presencial",
+            "Teleconsulta"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "psicologia",
+      "name": "Psicologia Clínica",
+      "short_name": "Psicologia",
+      "summary": "Acolhimento emocional e psicoterapia em espaço sigiloso.",
+      "description": "Acolhimento emocional e psicoterapia individual para adultos e adolescentes em um espaço ético e sigiloso.",
+      "modalities": [
+        "Presencial",
+        "Teleconsulta"
+      ],
+      "keywords": [
+        "psicologia",
+        "psicologo",
+        "psicologa",
+        "terapia",
+        "psicoterapia",
+        "ansiedade",
+        "estresse",
+        "emocional"
+      ],
+      "doctors": [
+        {
+          "slug": "beatriz-tavares",
+          "name": "Psi. Beatriz Tavares",
+          "first_name": "Psi. Beatriz",
+          "modalities": [
+            "Presencial",
+            "Teleconsulta"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "nutricao",
+      "name": "Nutrição Clínica",
+      "short_name": "Nutrição",
+      "summary": "Planos alimentares realistas e reeducação nutricional.",
+      "description": "Planejamento alimentar individualizado, reeducação nutricional e suporte para metas de saúde e bem-estar.",
+      "modalities": [
+        "Presencial",
+        "Teleconsulta"
+      ],
+      "keywords": [
+        "nutricao",
+        "nutricionista",
+        "dieta",
+        "alimentacao",
+        "reeducacao alimentar",
+        "nutri"
+      ],
+      "doctors": [
+        {
+          "slug": "lucas-ferraz",
+          "name": "Nutri. Lucas Ferraz",
+          "first_name": "Nutri. Lucas",
+          "modalities": [
+            "Presencial",
+            "Teleconsulta"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "dermatologia",
+      "name": "Dermatologia",
+      "short_name": "Dermatologia",
+      "summary": "Cuidados com pele, cabelos e unhas.",
+      "description": "Cuidados clínicos e preventivos com a pele, cabelos e unhas, com avaliação individualizada para cada paciente.",
+      "modalities": [
+        "Presencial"
+      ],
+      "keywords": [
+        "dermatologia",
+        "dermatologista",
+        "pele",
+        "cabelo",
+        "unha",
+        "acne",
+        "derma"
+      ],
+      "doctors": [
+        {
+          "slug": "sofia-monteiro",
+          "name": "Dra. Sofia Monteiro",
+          "first_name": "Dra. Sofia",
+          "modalities": [
+            "Presencial"
+          ]
+        }
+      ]
+    }
+  ],
+  "doctors": [
+    {
+      "slug": "henrique-vasconcelos",
+      "name": "Dr. Henrique Vasconcelos",
+      "first_name": "Dr. Henrique",
+      "specialty_label": "Clínica Geral",
+      "credential": "CRM-SP 000.001 • RQE 00.001 (Fictício)",
+      "modalities": [
+        "Presencial",
+        "Teleconsulta"
+      ],
+      "bio": "Graduação pela UNICAMP, com foco em medicina preventiva, check-ups e acompanhamento clínico integral.",
+      "about": "Acredita que a consulta de clínica geral é a porta de entrada para um cuidado organizado: escuta a história completa do paciente, orienta exames com critério e coordena o encaminhamento para outras especialidades quando necessário.",
+      "education": [
+        "Medicina — UNICAMP",
+        "Residência em Clínica Médica — Hospital de Clínicas (fictício)",
+        "Pós-graduação em Medicina Preventiva"
+      ],
+      "focus_areas": [
+        "Check-up preventivo",
+        "Hipertensão e diabetes",
+        "Acompanhamento de doenças crônicas",
+        "Orientação de exames de rotina"
+      ],
+      "languages": [
+        "Português",
+        "Inglês"
+      ],
+      "schedule": [
+        "Seg, Qua e Sex — 08h às 17h",
+        "Sáb — 08h às 12h"
+      ],
+      "years_experience": 14,
+      "specialty_slug": "clinica-geral",
+      "photo_url": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=700&q=85"
+    },
+    {
+      "slug": "mariana-albuquerque",
+      "name": "Dra. Mariana Albuquerque",
+      "first_name": "Dra. Mariana",
+      "specialty_label": "Cardiologia",
+      "credential": "CRM-SP 000.002 • RQE 00.002 (Fictício)",
+      "modalities": [
+        "Presencial"
+      ],
+      "bio": "Especialista em cardiologia clínica e prevenção cardiovascular, com atenção individualizada à saúde do coração.",
+      "about": "Atua na prevenção cardiovascular com foco em mudanças de estilo de vida sustentáveis. Realiza avaliações pré-operatórias e acompanha pacientes com hipertensão, arritmias e colesterol alto.",
+      "education": [
+        "Medicina — USP",
+        "Residência em Cardiologia — InCor (fictício)",
+        "Título de Especialista em Cardiologia (fictício)"
+      ],
+      "focus_areas": [
+        "Prevenção cardiovascular",
+        "Avaliação pré-operatória",
+        "Hipertensão arterial",
+        "Cardiologia do esporte"
+      ],
+      "languages": [
+        "Português",
+        "Espanhol"
+      ],
+      "schedule": [
+        "Ter e Qui — 08h às 18h"
+      ],
+      "years_experience": 11,
+      "specialty_slug": "cardiologia",
+      "photo_url": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=700&q=85"
+    },
+    {
+      "slug": "camila-nogueira",
+      "name": "Dra. Camila Nogueira",
+      "first_name": "Dra. Camila",
+      "specialty_label": "Pediatria",
+      "credential": "CRM-SP 000.003 • RQE 00.003 (Fictício)",
+      "modalities": [
+        "Presencial",
+        "Teleconsulta"
+      ],
+      "bio": "Acompanhamento pediátrico humanizado desde os primeiros meses de vida, apoiando famílias com orientação clara.",
+      "about": "Acompanha bebês, crianças e adolescentes com consultas sem pressa, explicando cada etapa do desenvolvimento para a família. Valoriza a puericultura e o calendário vacinal em dia.",
+      "education": [
+        "Medicina — PUC-Campinas",
+        "Residência em Pediatria — Hospital Infantil (fictício)",
+        "Especialização em Puericultura"
+      ],
+      "focus_areas": [
+        "Puericultura",
+        "Desenvolvimento infantil",
+        "Orientação alimentar na infância",
+        "Adolescência"
+      ],
+      "languages": [
+        "Português"
+      ],
+      "schedule": [
+        "Seg a Sex — 13h às 19h",
+        "Sáb — 08h às 12h"
+      ],
+      "years_experience": 9,
+      "specialty_slug": "pediatria",
+      "photo_url": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=700&q=85"
+    },
+    {
+      "slug": "beatriz-tavares",
+      "name": "Psi. Beatriz Tavares",
+      "first_name": "Psi. Beatriz",
+      "specialty_label": "Psicologia Clínica",
+      "credential": "CRP 06/000004 (Fictício)",
+      "modalities": [
+        "Presencial",
+        "Teleconsulta"
+      ],
+      "bio": "Psicoterapia baseada em evidências para manejo de ansiedade, estresse e transições de vida.",
+      "about": "Trabalha com Terapia Cognitivo-Comportamental (TCC) em um ambiente ético e acolhedor. Atende adultos e adolescentes, presencialmente ou por teleconsulta.",
+      "education": [
+        "Psicologia — PUC-Campinas",
+        "Especialização em Terapia Cognitivo-Comportamental",
+        "Formação em Mindfulness (fictício)"
+      ],
+      "focus_areas": [
+        "Ansiedade e estresse",
+        "Transições de vida e carreira",
+        "Autoestima",
+        "Orientação a adolescentes"
+      ],
+      "languages": [
+        "Português",
+        "Inglês"
+      ],
+      "schedule": [
+        "Seg a Qui — 10h às 19h"
+      ],
+      "years_experience": 8,
+      "specialty_slug": "psicologia",
+      "photo_url": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=85"
+    },
+    {
+      "slug": "lucas-ferraz",
+      "name": "Nutri. Lucas Ferraz",
+      "first_name": "Nutri. Lucas",
+      "specialty_label": "Nutrição Clínica",
+      "credential": "CRN-3 00005 (Fictício)",
+      "modalities": [
+        "Presencial",
+        "Teleconsulta"
+      ],
+      "bio": "Nutrição comportamental e clínica voltada para planos alimentares realistas e sustentáveis na rotina.",
+      "about": "Monta planos alimentares que cabem na rotina real do paciente, sem dietas restritivas. Acompanha metas de saúde com retornos periódicos e materiais de apoio.",
+      "education": [
+        "Nutrição — UNICAMP",
+        "Especialização em Nutrição Clínica",
+        "Formação em Nutrição Comportamental"
+      ],
+      "focus_areas": [
+        "Reeducação alimentar",
+        "Nutrição esportiva",
+        "Alimentação para doenças crônicas",
+        "Nutrição comportamental"
+      ],
+      "languages": [
+        "Português",
+        "Inglês"
+      ],
+      "schedule": [
+        "Ter, Qui e Sex — 08h às 18h"
+      ],
+      "years_experience": 7,
+      "specialty_slug": "nutricao",
+      "photo_url": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=700&q=85"
+    },
+    {
+      "slug": "sofia-monteiro",
+      "name": "Dra. Sofia Monteiro",
+      "first_name": "Dra. Sofia",
+      "specialty_label": "Dermatologia",
+      "credential": "CRM-SP 000.006 • RQE 00.006 (Fictício)",
+      "modalities": [
+        "Presencial"
+      ],
+      "bio": "Dermatologia clínica e preventiva, acompanhamento de pele sensível e orientação dermatológica personalizada.",
+      "about": "Foca em dermatologia clínica e prevenção, com orientação sobre cuidados diários e fotoproteção. Avalia pintas, acne, dermatites e alterações de cabelos e unhas.",
+      "education": [
+        "Medicina — UNIFESP",
+        "Residência em Dermatologia (fictício)",
+        "Título de Especialista em Dermatologia (fictício)"
+      ],
+      "focus_areas": [
+        "Dermatologia clínica",
+        "Prevenção do câncer de pele",
+        "Acne e pele sensível",
+        "Cabelos e unhas"
+      ],
+      "languages": [
+        "Português",
+        "Francês"
+      ],
+      "schedule": [
+        "Seg e Qua — 13h às 19h",
+        "Sex — 08h às 12h"
+      ],
+      "years_experience": 10,
+      "specialty_slug": "dermatologia",
+      "photo_url": "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=700&q=85"
+    }
+  ],
+  "insurances": [
+    {
+      "is_private": false,
+      "slug": "unimed",
+      "name": "Unimed",
+      "note": "Consultas & Exames",
+      "monogram": "U",
+      "keywords": [
+        "unimed"
+      ]
+    },
+    {
+      "is_private": false,
+      "slug": "bradesco-saude",
+      "name": "Bradesco Saúde",
+      "note": "Rede Credenciada",
+      "monogram": "BS",
+      "keywords": [
+        "bradesco",
+        "bradesco saude"
+      ]
+    },
+    {
+      "is_private": false,
+      "slug": "sulamerica",
+      "name": "SulAmérica",
+      "note": "Planos Nacionais",
+      "monogram": "SA",
+      "keywords": [
+        "sulamerica",
+        "sul america"
+      ]
+    },
+    {
+      "is_private": false,
+      "slug": "amil",
+      "name": "Amil",
+      "note": "Consultas Ambulatoriais",
+      "monogram": "A",
+      "keywords": [
+        "amil"
+      ]
+    },
+    {
+      "is_private": false,
+      "slug": "porto-seguro",
+      "name": "Porto Seguro",
+      "note": "Saúde Empresarial",
+      "monogram": "PS",
+      "keywords": [
+        "porto",
+        "porto seguro"
+      ]
+    },
+    {
+      "is_private": false,
+      "slug": "notredame",
+      "name": "NotreDame Intermédica",
+      "note": "Planos Selecionados",
+      "monogram": "NI",
+      "keywords": [
+        "notredame",
+        "notre dame",
+        "intermedica",
+        "gndi"
+      ]
+    },
+    {
+      "is_private": false,
+      "slug": "omint-careplus",
+      "name": "Omint / Care Plus",
+      "note": "Atendimento Diferenciado",
+      "monogram": "OC",
+      "keywords": [
+        "omint",
+        "care plus",
+        "careplus"
+      ]
+    },
+    {
+      "is_private": true,
+      "slug": "particular",
+      "name": "Atendimento Particular",
+      "note": "Nota fiscal para reembolso",
+      "monogram": "P",
+      "keywords": [
+        "particular",
+        "reembolso",
+        "sem convenio",
+        "sem plano"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "id": 1,
+      "question": "O pré-agendamento pelo site já garante o horário?",
+      "answer": "O envio pelo site registra sua preferência de dia, turno e profissional. Nossa equipe de recepção entra em contato rapidamente via WhatsApp ou telefone para confirmar o horário exato disponível na agenda.",
+      "keywords": [
+        "garante",
+        "garantido",
+        "confirmado",
+        "confirmacao",
+        "pre-agendamento",
+        "pre agendamento",
+        "horario confirmado"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Quais documentos preciso levar na primeira consulta?",
+      "answer": "Traga um documento oficial com foto, a carteirinha do convênio (quando aplicável) e exames anteriores recentes relacionados à sua consulta. Recomendamos chegar com 15 minutos de antecedência.",
+      "keywords": [
+        "documento",
+        "documentos",
+        "levar",
+        "rg",
+        "carteirinha",
+        "primeira consulta",
+        "antecedencia"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Como funciona a teleconsulta?",
+      "answer": "Nas especialidades habilitadas, o atendimento é realizado por videochamada em ambiente seguro, conforme regulamentação da telemedicina no Brasil. Receitas e pedidos de exames são enviados digitalmente com assinatura eletrônica.",
+      "keywords": [
+        "teleconsulta",
+        "online",
+        "video",
+        "videochamada",
+        "telemedicina",
+        "remoto",
+        "a distancia"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Vocês emitem nota fiscal para reembolso de convênio?",
+      "answer": "Sim. Para atendimentos particulares, emitimos nota fiscal detalhada para que você possa solicitar reembolso junto à sua operadora de saúde, conforme as regras do seu contrato.",
+      "keywords": [
+        "nota fiscal",
+        "reembolso",
+        "recibo",
+        "nf"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Posso remarcar ou cancelar uma consulta?",
+      "answer": "Pode, sim. Pedimos que avise com pelo menos 24 horas de antecedência pelo WhatsApp ou telefone da recepção, assim liberamos o horário para outro paciente.",
+      "keywords": [
+        "remarcar",
+        "cancelar",
+        "cancelamento",
+        "desmarcar",
+        "mudar horario",
+        "reagendar"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "A clínica tem estacionamento e acessibilidade?",
+      "answer": "Sim. Temos estacionamento conveniado no local e estrutura acessível para pessoas com mobilidade reduzida, incluindo rampas, elevador e banheiro adaptado.",
+      "keywords": [
+        "estacionamento",
+        "estacionar",
+        "carro",
+        "vaga",
+        "acessibilidade",
+        "cadeirante",
+        "mobilidade",
+        "elevador"
+      ]
+    }
+  ]
+};
