@@ -1,6 +1,6 @@
 # Clínica Vida — Site + API FastAPI + Assistente Virtual (v2)
 
-**[🔗 Ver demo online](https://github.com/AquilesMBoni/ClinicaVida)** · [Como executar](#como-executar) · [Endpoints](#endpoints)
+**[🔗 Ver demo online](https://aquilesmboni.github.io/ClinicaVida/)** · [Como executar](#como-executar) · [Endpoints](#endpoints)
 
 > A demo online (GitHub Pages) roda em **modo offline**: o site e a assistente usam dados locais e o pré-agendamento não é gravado. Para a experiência completa (API, banco SQLite e Swagger), execute o projeto localmente.
 
